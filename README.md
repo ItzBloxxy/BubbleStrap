@@ -32,4 +32,4 @@ Download the latest release [here][repo-latest]
 [repo-latest]:   https://github.com/ItzBloxxy/BubbleStrap/releases/latest
 
 **FAQ:**
-- Is Bloxshade supported? No, Bloxshade is generally no longer supported or functional due to recent, stricter security updates from Roblox that block the methods shaders like Bloxshade and NVIDIA Ansel rely on for injection, making them incompatible with modern Roblox versions and risking moderation. While there were recent updates adding Bloxshade support, these changes have effectively broken the core functionality for most users. 
+- **Is Bloxshade supported?** *No*, Bloxshade is generally no longer supported or functional due to recent, stricter security updates from Roblox that block the methods shaders like Bloxshade and NVIDIA Ansel rely on for injection, making them incompatible with modern Roblox versions and risking moderation. While there were recent updates adding Bloxshade support, these changes have effectively broken the core functionality for most users. 
