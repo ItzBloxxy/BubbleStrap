@@ -26,4 +26,4 @@ Download the latest release [here][repo-latest]
     <img src="." width="420">
 </div>
 
-[repo-latest]:   https://github.com/fishstrap/fishstrap/releases/latest
+[repo-latest]:   https://github.com/ItzBloxxy/BubbleStrap/releases/latest
