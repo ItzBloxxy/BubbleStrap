@@ -3,27 +3,28 @@
 
 
 > [!CAUTION]
-> The only official places to download BubbleStrap are this GitHub repository. (for now)
+> The only official places to download BubbleStrap is this GitHub repository. (for now)
 
 BubbleStrap is a fork of Fishstrap.
 
-BubbleStrap is a bootstrapper for Roblox that aims to provide additional features to improve your experience. BubbleStrap only supports Windows 10 and above, and we do not have any plans to port it to any other operating systems.
+BubbleStrap is a fast and lightweight bootstrapper for Roblox that aims to provide additional features to improve your experience. BubbleStrap only supports Windows 10 and above, and we do not have any plans to port it to any other operating systems.
 
 Found any bugs? [Submit an issue](https://github.com/ItzBloxxy/BubbleStrap/issues/new/choose)
 
-Download the latest release [here][repo-latest]
+Download the latest release [here][repo-latest]! 🔥 
 
-## Feature List
+## Features
 - Detailed player logs
 - Detailed server information (Thanks to [RoValra](https://www.rovalra.com/))
 - Studio Support
-- Flag editor (Roblox Studio only)
+- FFlag editor
 - Framerate cap unlocking
 - Global Settings page
-- Custom Fishstrap game invite links
+- Custom BubbleStrap game invite links
 - Cache cleaner
 - Channel changer
-- Much more coming soon (It just has been worked on)
+- Perfomance customization
+- Much more (It just has been worked on)
 
 <div align="center">
     <img src="." width="420">
@@ -33,3 +34,5 @@ Download the latest release [here][repo-latest]
 
 **FAQ:**
 - **Is Bloxshade supported?** *No*, Bloxshade is generally no longer supported or functional due to recent, stricter security updates from Roblox that block the methods shaders like Bloxshade and NVIDIA Ansel rely on for injection, making them incompatible with modern Roblox versions and risking moderation. While there were recent updates adding Bloxshade support, these changes have effectively broken the core functionality for most users. 
+
+- **Will you get banend for this** No.
