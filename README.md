@@ -18,8 +18,7 @@ BubbleStrap is a fast and lightweight bootstrapper for Roblox that aims to provi
 Found any bugs or issues?
 👉 [Submit an issue](https://github.com/ItzBloxxy/BubbleStrap/issues/new/choose)
 
-Download the latest release!
-👉 👉 **[Download the latest release here]([repo-latest])** 🔥! 🔥 
+Download the latest release [here][repo-latest]! 🔥
 
 ## Features
 - Detailed player logs
