@@ -1,0 +1,9 @@
+﻿SetForegroundWindow
+FlashWindow
+GetWindowLong
+SetWindowLong
+SHObjectProperties
+HWND
+WINDOW_LONG_PTR_INDEX
+GWL_EXSTYLE
+GWL_STYLE
