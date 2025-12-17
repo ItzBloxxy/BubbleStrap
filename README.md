@@ -2,7 +2,7 @@
 
 <div align="center">
   <img 
-    src="[https://github.com/user-attachments/assets/8ed82a50-0280-4035-be36-62fc80a6f6e8](https://github.com/user-attachments/assets/f05569c3-e529-4f79-9335-5a313de85686)"
+    src="[<img width="1640" height="664" alt="yesss" src="https://github.com/user-attachments/assets/ab9def97-3cdf-4739-936d-6672e2d4fc9c" />)"
     width="1640"
     height="664"
   />
