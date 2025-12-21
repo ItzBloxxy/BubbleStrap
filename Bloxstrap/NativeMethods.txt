@@ -1,0 +1,10 @@
+﻿SetForegroundWindow
+FlashWindow
+GetWindowLong
+SetWindowLong
+GetWindowLongPtr
+SetWindowLongPtr
+SHObjectProperties
+HWND
+WINDOW_LONG_PTR_INDEX
+SHOP_TYPE
