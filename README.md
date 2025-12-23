@@ -21,18 +21,38 @@ Found any bugs or issues?
 Download the latest release [here][repo-latest]! 🔥
 
 ## Features
+
+### Integrations
+- Activity tracking
 - Detailed player logs
 - Detailed server information (Thanks to [RoValra](https://www.rovalra.com/))
-- Studio Support
+- Don't exit to desktop app
+- Fully customizable Discord Rich Presence
+- Multi-instance launching
+- Set custom intergrations (you can have other programs launch with Roblox automatically)
+
+### Bootstraper
+- Prompt to confirm when launching another instance
+- Memory trim (Roblox will use 30mb-150mb ram usage)
+- Close RobloxCrashHandler (reduces 20mb+ ram usage)
+- Background updates - Update roblox in the background instead of waiting.
+- Cache cleaner
+
+## Other
+- Channel changer
 - FFlag editor
-- Framerate cap unlocking
 - Global Settings page
 - Custom BubbleStrap game invite links
-- Cache cleaner
-- Channel changer
-- Perfomance customization
-- Much more (It just has been worked on)
+- Roblox Studio Support
+- Framerate cap unlocking
 
+### Mods
+- Use custom font
+- Custom Death Sound
+- Emulate old character sounds from 2014
+- Use old avatar editor bcakground
+- Custom Mouse Cursor
+  
 [repo-latest]:   https://github.com/ItzBloxxy/BubbleStrap/releases/latest
 
 ## FAQ:
