@@ -15,10 +15,9 @@ BubbleStrap is a fast and lightweight bootstrapper for Roblox that aims to provi
 
 ## Requires [NET 9.0 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-9.0.308-windows-x64-installer)
 
+Download the latest release [here][repo-latest]! 🔥
 Found any bugs or issues?
 👉 [Submit an issue](https://github.com/ItzBloxxy/BubbleStrap/issues/new/choose)
-
-Download the latest release [here][repo-latest]! 🔥
 
 ## Features
 
