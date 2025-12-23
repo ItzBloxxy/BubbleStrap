@@ -29,22 +29,14 @@ Download the latest release [here][repo-latest]! 🔥
 - Don't exit to desktop app
 - Fully customizable Discord Rich Presence
 - Multi-instance launching
-- Set custom intergrations (you can have other programs launch with Roblox automatically)
+- Set custom integrations (you can have other programs launch with Roblox automatically)
 
-### Bootstraper
+### Bootstrapper
 - Prompt to confirm when launching another instance
 - Memory trim (Roblox will use 30mb-150mb ram usage)
 - Close RobloxCrashHandler (reduces 20mb+ ram usage)
 - Background updates - Update roblox in the background instead of waiting.
 - Cache cleaner
-
-## Other
-- Channel changer
-- FFlag editor
-- Global Settings page
-- Custom BubbleStrap game invite links
-- Roblox Studio Support
-- Framerate cap unlocking
 
 ### Mods
 - Use custom font
@@ -52,6 +44,14 @@ Download the latest release [here][repo-latest]! 🔥
 - Emulate old character sounds from 2014
 - Use old avatar editor bcakground
 - Custom Mouse Cursor
+
+### Other
+- Channel changer
+- FFlag editor
+- Global Settings page
+- Custom BubbleStrap game invite links
+- Roblox Studio Support
+- Framerate cap unlocking
   
 [repo-latest]:   https://github.com/ItzBloxxy/BubbleStrap/releases/latest
 
