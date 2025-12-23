@@ -20,7 +20,7 @@ Found any bugs or issues?
 
 Download the latest release [here][repo-latest]! 🔥
 
-## Key Improvements over Fishstrap
+## Features
 
 ### Integrations
 - Activity tracking
