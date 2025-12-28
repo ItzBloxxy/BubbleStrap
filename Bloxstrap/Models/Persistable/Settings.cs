@@ -9,7 +9,7 @@ namespace Bloxstrap.Models.Persistable
 
         // bloxstrap configuration
         public BootstrapperStyle BootstrapperStyle { get; set; } = BootstrapperStyle.FluentAeroDialog;
-        public BootstrapperIcon BootstrapperIcon { get; set; } = BootstrapperIcon.IconBloxstrap;
+        public BootstrapperIcon BootstrapperIcon { get; set; } = BootstrapperIcon.IconBubblestrap;
         public string BootstrapperTitle { get; set; } = App.ProjectName;
         public string BootstrapperIconCustomLocation { get; set; } = "";
         public Theme Theme { get; set; } = Theme.Default;
@@ -17,6 +17,10 @@ namespace Bloxstrap.Models.Persistable
         public bool DeveloperMode { get; set; } = false;
         public bool ForceLocalData { get; set; } = false;
         public bool CheckForUpdates { get; set; } = true;
+        public bool AutoCloseCrashHandler { get; set; } = true;
+        public bool HideBootstrapperInfo { get; set; } = false;
+        public bool EnableMemoryTrimmer { get; set; } = false;
+        public int MemoryTrimInterval { get; set; } = 5;
         public bool MultiInstanceLaunching { get; set; } = false;
         public bool ConfirmLaunches { get; set; } = true;
         public string Locale { get; set; } = "nil";
@@ -40,6 +44,8 @@ namespace Bloxstrap.Models.Persistable
         public bool EnableActivityTracking { get; set; } = true;
         public bool UseDiscordRichPresence { get; set; } = true;
         public bool HideRPCButtons { get; set; } = true;
+        public bool ShowUsingBubblestrapRPC { get; set; } = true;
+        public bool EnableCustomStatusDisplay { get; set; } = true;
         public bool ShowAccountOnRichPresence { get; set; } = false;
         public bool ShowServerDetails { get; set; } = false;
         public ObservableCollection<CustomIntegration> CustomIntegrations { get; set; } = new();

@@ -48,6 +48,7 @@ namespace Bloxstrap.UI.Elements.Installer
         public MainWindow()
         {
             _viewModel.CloseWindowRequest += (_, _) => CloseWindow();
+            App.BubbleRPC?.SetDialog("Installer");
 
             _viewModel.PageRequest += (_, type) =>
             {

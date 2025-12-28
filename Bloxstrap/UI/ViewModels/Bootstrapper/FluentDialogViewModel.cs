@@ -33,13 +33,21 @@ namespace Bloxstrap.UI.ViewModels.Bootstrapper
                     new SolidColorBrush(Color.FromArgb(alpha, 30, 30, 30));
             }
 
-            VersionText = $"{Strings.Common_Version}: {version}";
-            ChannelText = $"{Strings.Common_Channel}: {Deployment.Channel}";
-
-            Deployment.ChannelChanged += (_, newChannel) =>
+            if (App.Settings.Prop.HideBootstrapperInfo)
             {
-                ChannelText = $"{Strings.Common_Channel}: {newChannel}";
-            };
+                VersionText = string.Empty;
+                ChannelText = string.Empty;
+            }
+            else
+            {
+                VersionText = $"{Strings.Common_Version}: {version}";
+                ChannelText = $"{Strings.Common_Channel}: {Deployment.Channel}";
+
+                Deployment.ChannelChanged += (_, newChannel) =>
+                {
+                    ChannelText = $"{Strings.Common_Channel}: {newChannel}";
+                };
+            }
         }
     }
 }

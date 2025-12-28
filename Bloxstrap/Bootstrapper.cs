@@ -21,6 +21,7 @@ using System.Data;
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Shell;
+using System.Runtime.InteropServices;
 
 namespace Bloxstrap
 {
@@ -752,6 +753,34 @@ namespace Bloxstrap
             {
                 using var process = Process.Start(startInfo)!;
                 _appPid = process.Id;
+
+                if (App.Settings.Prop.AutoCloseCrashHandler)
+                {
+                    _ = Task.Run(async () =>
+                    {
+                        for (int i = 0; i < 20; i++) // we check for 20 seconds, since some pcs are slow and wont kill it in time.
+                        {
+                            var crashHandler = Process.GetProcessesByName("RobloxCrashHandler").FirstOrDefault();
+
+                            if (crashHandler != null)
+                            {
+                                try
+                                {
+                                    int pid = crashHandler.Id;
+                                    crashHandler.Kill();
+                                    App.Logger.WriteLine(LOG_IDENT, $"[CrashKiller] Successfully killed RobloxCrashHandler (PID {pid})");
+                                    return;
+                                }
+                                catch (Exception ex)
+                                {
+                                    App.Logger.WriteLine(LOG_IDENT, $"[CrashKiller] Found it, but failed to kill: {ex.Message}");
+                                }
+                            }
+
+                            await Task.Delay(1000);
+                        }
+                    });
+                }
             }
             catch (Win32Exception ex) when (ex.NativeErrorCode == 1223)
             {

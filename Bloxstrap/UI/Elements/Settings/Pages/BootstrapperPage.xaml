@@ -45,9 +45,37 @@
         </controls:OptionControl>
 
         <controls:OptionControl 
+            Header="{x:Static resources:Strings.Menu_Behaviour_HideBootstrapperInfo_Title}"
+            Description="{x:Static resources:Strings.Menu_Behaviour_HideBootstrapperInfo_Description}">
+            <ui:ToggleSwitch IsChecked="{Binding HideBootstrapperInfo, Mode=TwoWay}" />
+        </controls:OptionControl>
+
+        <controls:OptionControl 
+            Header="{x:Static resources:Strings.Menu_Behaviour_CloseCrashHandler_Title}"
+            Description="{x:Static resources:Strings.Menu_Behaviour_CloseCrashHandler_Description}">
+            <ui:ToggleSwitch IsChecked="{Binding CloseCrashHandler, Mode=TwoWay}" />
+        </controls:OptionControl>
+
+        <controls:OptionControl 
             Header="{x:Static resources:Strings.Menu_Behaviour_BackgroundUpdates_Title}"
             Description="{x:Static resources:Strings.Menu_Behaviour_BackgroundUpdates_Description}">
             <ui:ToggleSwitch IsChecked="{Binding BackgroundUpdates, Mode=TwoWay}" />
+        </controls:OptionControl>
+
+        <controls:OptionControl 
+    Header="Enable Memory Trimmer"
+    Description="Periodically clears Roblox's memory usage to reduce RAM consumption.">
+            <ui:ToggleSwitch IsChecked="{Binding EnableMemoryTrimmer, Mode=TwoWay}" />
+        </controls:OptionControl>
+
+        <controls:OptionControl 
+            Header="Memory Trim Interval" 
+            Description="How often (in seconds) to trim memory. Lower values use more CPU.">
+            <ui:TextBox Margin="5,0,0,0" 
+                Padding="10,5,10,5" 
+                Width="200" 
+                Text="{Binding MemoryTrimInterval, Mode=TwoWay}" 
+                PreviewTextInput="ValidateNumber" />
         </controls:OptionControl>
 
         <ui:CardExpander Grid.Row="1" Margin="0,8,0,0" IsExpanded="True">

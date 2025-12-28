@@ -12,6 +12,7 @@ namespace Bloxstrap.UI.Elements.About
         public MainWindow()
         {
             InitializeComponent();
+            App.BubbleRPC?.SetDialog("About");
 
             App.Logger.WriteLine("MainWindow", "Initializing about window");
 

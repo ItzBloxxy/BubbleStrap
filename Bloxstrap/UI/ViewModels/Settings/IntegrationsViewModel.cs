@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.Input;
+﻿using Bloxstrap.Integrations;
+using CommunityToolkit.Mvvm.Input;
 using Microsoft.Win32;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
@@ -105,10 +106,39 @@ namespace Bloxstrap.UI.ViewModels.Settings
             }
         }
 
+        public bool ShowUsingBubblestrapRPC
+        {
+            get => App.Settings.Prop.ShowUsingBubblestrapRPC;
+            set
+            {
+                App.Settings.Prop.ShowUsingBubblestrapRPC = value;
+
+                if (value)
+                {
+                    if (App.BubbleRPC == null)
+                    {
+                        App.BubbleRPC = new BubblestrapRichPresence();
+                        App.BubbleRPC.SetPage("Integration");
+                    }
+                }
+                else
+                {
+                    App.BubbleRPC?.Dispose();
+                    App.BubbleRPC = null;
+                }
+            }
+        }
+
         public bool DiscordActivityJoinEnabled
         {
             get => !App.Settings.Prop.HideRPCButtons;
             set => App.Settings.Prop.HideRPCButtons = !value;
+        }
+
+        public bool EnableCustomStatusDisplay
+        {
+            get => App.Settings.Prop.EnableCustomStatusDisplay;
+            set => App.Settings.Prop.EnableCustomStatusDisplay = value;
         }
 
         public bool DiscordAccountOnProfile

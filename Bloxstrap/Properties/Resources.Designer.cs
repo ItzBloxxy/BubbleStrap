@@ -19,10 +19,10 @@ namespace Bloxstrap.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Bloxstrap.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Bloxstrap.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace Bloxstrap.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -59,11 +59,11 @@ namespace Bloxstrap.Properties {
                 resourceCulture = value;
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CancelButton {
+        public static System.Drawing.Bitmap CancelButton {
             get {
                 object obj = ResourceManager.GetObject("CancelButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +73,7 @@ namespace Bloxstrap.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CancelButtonHover {
+        public static System.Drawing.Bitmap CancelButtonHover {
             get {
                 object obj = ResourceManager.GetObject("CancelButtonHover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +83,7 @@ namespace Bloxstrap.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DarkCancelButton {
+        public static System.Drawing.Bitmap DarkCancelButton {
             get {
                 object obj = ResourceManager.GetObject("DarkCancelButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,118 +93,99 @@ namespace Bloxstrap.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DarkCancelButtonHover {
+        public static System.Drawing.Bitmap DarkCancelButtonHover {
             get {
                 object obj = ResourceManager.GetObject("DarkCancelButtonHover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-		
-
+        
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon IconBloxstrap
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("IconBloxstrap", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Icon2008
-        {
-            get
-            {
+        public static System.Drawing.Icon Icon2008 {
+            get {
                 object obj = ResourceManager.GetObject("Icon2008", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon Icon2011
-        {
-            get
-            {
+        public static System.Drawing.Icon Icon2011 {
+            get {
                 object obj = ResourceManager.GetObject("Icon2011", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon IconEarly2015
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("IconEarly2015", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon IconLate2015
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("IconLate2015", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Icon2017
-        {
-            get
-            {
+        public static System.Drawing.Icon Icon2017 {
+            get {
                 object obj = ResourceManager.GetObject("Icon2017", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon Icon2019
-        {
-            get
-            {
+        public static System.Drawing.Icon Icon2019 {
+            get {
                 object obj = ResourceManager.GetObject("Icon2019", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon Icon2022
-        {
-            get
-            {
+        public static System.Drawing.Icon Icon2022 {
+            get {
                 object obj = ResourceManager.GetObject("Icon2022", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon IconBloxstrapClassic
-        {
-            get
-            {
+        public static System.Drawing.Icon IconBloxstrapClassic {
+            get {
                 object obj = ResourceManager.GetObject("IconBloxstrapClassic", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        public static System.Drawing.Icon IconBubblestrap {
+            get {
+                object obj = ResourceManager.GetObject("IconBubblestrap", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        public static System.Drawing.Icon IconEarly2015 {
+            get {
+                object obj = ResourceManager.GetObject("IconEarly2015", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        public static System.Drawing.Icon IconLate2015 {
+            get {
+                object obj = ResourceManager.GetObject("IconLate2015", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

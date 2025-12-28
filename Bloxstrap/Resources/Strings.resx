@@ -405,7 +405,7 @@ Would you like to upgrade your currently installed version?</value>
     <value>Code</value>
   </data>
   <data name="Menu.About.Contributors.Description" xml:space="preserve">
-    <value>These are the people who have made notable contributions to Bubblestrap/BubbleStrap/Bloxstrap, helping make it what it is.</value>
+    <value>These are the people who have made notable contributions to Bubblestrap/Fishstrap/Bloxstrap, helping make it what it is.</value>
   </data>
   <data name="Menu.About.Contributors.FeatureIdeas" xml:space="preserve">
     <value>Feature Ideas</value>
@@ -476,6 +476,18 @@ Would you like to upgrade your currently installed version?</value>
   </data>
   <data name="Menu.Appearance.CustomisationTitle.Title" xml:space="preserve">
     <value>Title</value>
+  </data>
+  <data name="Menu.Behaviour.HideBootstrapperInfo.Description" xml:space="preserve">
+	<value>Hides version and production info during launch.</value>
+  </data>
+  <data name="Menu.Behaviour.HideBootstrapperInfo.Title" xml:space="preserve">
+	<value>Hide version and production details</value>
+  </data>
+  <data name="Menu.Behaviour.CloseCrashHandler.Description" xml:space="preserve">
+	<value>Automatically closes the RobloxCrashHandler.exe process on startup to reduce memory usage.</value>
+  </data>
+  <data name="Menu.Behaviour.CloseCrashHandler.Title" xml:space="preserve">
+    <value>Close Roblox Crash Handler</value>
   </data>
   <data name="Menu.Appearance.Description" xml:space="preserve">
     <value>Configure how Bubblestrap should look.</value>
@@ -704,6 +716,18 @@ Selecting 'No' will ignore this warning and continue installation.</value>
   <data name="Menu.Integrations.EnableActivityTracking.Title" xml:space="preserve">
     <value>Enable activity tracking</value>
   </data>
+  <data name="Menu.Integrations.ShowBubblestrapRPC.Description" xml:space="preserve">
+	<value>Enable this to display a custom BubbleStrap Discord RPC on your profile while the app is open.</value>
+  </data>
+  <data name="Menu.Integrations.ShowBubblestrapRPC.Title" xml:space="preserve">
+	<value>BubbleStrap RPC</value>
+  </data>
+  <data name="Menu.Mods.Misc.CustomDeathSound.Choose" xml:space="preserve">
+    <value>Choose sound...</value>
+  </data>
+  <data name="Menu.Mods.Misc.CustomDeathSound.Remove" xml:space="preserve">
+    <value>Remove Custom Death Sound</value>
+  </data>
   <data name="Menu.Integrations.RequiresActivityTracking" xml:space="preserve">
     <value>This feature requires activity tracking to be enabled and the Discord desktop app to be installed and running. [Find out more]({0}).</value>
   </data>
@@ -721,6 +745,12 @@ Selecting 'No' will ignore this warning and continue installation.</value>
   </data>
   <data name="Menu.Integrations.Title" xml:space="preserve">
     <value>Integrations</value>
+  </data>
+  <data name="Menu.Mods.Misc.CustomDeathSound.Title" xml:space="preserve">
+    <value>Custom Death Sound</value>
+  </data>
+  <data name="Menu.Mods.Misc.CustomDeathSound.Description" xml:space="preserve">
+    <value>Change the death sound to any audio you choose.</value>
   </data>
   <data name="Menu.Mods.Description" xml:space="preserve">
     <value>Manage and apply file mods to the Roblox game client.</value>
@@ -1773,11 +1803,5 @@ Defaulting to {1}.</value>
   </data>
   <data name="Menu.FastFlags.FRMQualityOverride.Description" xml:space="preserve">
     <value>Choose the FRM quality that Roblox should use.</value>
-  </data>
-  <data name="Menu.Bootstrapper.AllowCookieAccess.Title" xml:space="preserve">
-    <value>Allow Bubblestrap to access your Roblox account</value>
-  </data>
-  <data name="Menu.Bootstrapper.AllowCookieAccess.Description" xml:space="preserve">
-    <value>Provide access to Roblox APIs using your authentication cookie. [What will Bubblestrap access?]({0})</value>
   </data>
 </root>

@@ -19,7 +19,7 @@ namespace Bloxstrap.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Strings {
@@ -2378,7 +2378,7 @@ namespace Bloxstrap.Resources {
         ///
         ///Also, avoid using the &quot;Roblox Player&quot; shortcut to launch Roblox, as Bubblestrap won&apos;t launch with Roblox. If you don&apos;t see Bubblestrap show when launching from the website, simply launch Roblox with Bubblestrap once from the desktop to fix it.
         ///
-        ///What would you like to do?.
+        ///What would you like t [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Installer_Completion_Text {
             get {
@@ -2638,7 +2638,7 @@ namespace Bloxstrap.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to These are the people who have made notable contributions to Bubblestrap/BubbleStrap/Bloxstrap, helping make it what it is..
+        ///   Looks up a localized string similar to These are the people who have made notable contributions to Bubblestrap/Fishstrap/Bloxstrap, helping make it what it is..
         /// </summary>
         public static string Menu_About_Contributors_Description {
             get {
@@ -3034,6 +3034,24 @@ namespace Bloxstrap.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Automatically closes the RobloxCrashHandler.exe process on startup to reduce memory usage..
+        /// </summary>
+        public static string Menu_Behaviour_CloseCrashHandler_Description {
+            get {
+                return ResourceManager.GetString("Menu.Behaviour.CloseCrashHandler.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close Roblox Crash Handler.
+        /// </summary>
+        public static string Menu_Behaviour_CloseCrashHandler_Title {
+            get {
+                return ResourceManager.GetString("Menu.Behaviour.CloseCrashHandler.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Prevent against closures of your existing game from accidentally launching another one..
         /// </summary>
         public static string Menu_Behaviour_ConfirmLaunches_Description {
@@ -3079,6 +3097,24 @@ namespace Bloxstrap.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hides version and production info during launch..
+        /// </summary>
+        public static string Menu_Behaviour_HideBootstrapperInfo_Description {
+            get {
+                return ResourceManager.GetString("Menu.Behaviour.HideBootstrapperInfo.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hide version and production details.
+        /// </summary>
+        public static string Menu_Behaviour_HideBootstrapperInfo_Title {
+            get {
+                return ResourceManager.GetString("Menu.Behaviour.HideBootstrapperInfo.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Allows for having more than one Roblox game client instance open simultaneously. May cause issues with desktop app..
         /// </summary>
         public static string Menu_Behaviour_MultiInstances_Description {
@@ -3111,24 +3147,6 @@ namespace Bloxstrap.Resources {
         public static string Menu_Bloxstrap_Description {
             get {
                 return ResourceManager.GetString("Menu.Bloxstrap.Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Provide access to Roblox APIs using your authentication cookie. [What will Bubblestrap access?]({0}).
-        /// </summary>
-        public static string Menu_Bootstrapper_AllowCookieAccess_Description {
-            get {
-                return ResourceManager.GetString("Menu.Bootstrapper.AllowCookieAccess.Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Allow Bubblestrap to access your Roblox account.
-        /// </summary>
-        public static string Menu_Bootstrapper_AllowCookieAccess_Title {
-            get {
-                return ResourceManager.GetString("Menu.Bootstrapper.AllowCookieAccess.Title", resourceCulture);
             }
         }
         
@@ -3638,7 +3656,7 @@ namespace Bloxstrap.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Fast Flags are extremely powerful, being that they are intended to only be used by Roblox engineers. While they can be very useful, manually configuring them can cause serious issues with stability and functionality. Do NOT use the editor if you are unsure of what you are doing.
         ///
-        ///Do NOT use this to import large &quot;flag lists&quot; made by other people that promise to improve performance or such. They are subject to the aforementioned issues, and they will cause problems for you since you will not be fully aware of [rest of string was truncated]&quot;;.
+        ///Do NOT use this to import large &quot;flag lists&quot; made by other people that promise to improve performance or such. They are subject to the aforementioned issues, and they will cause problems for you since you will not be fully aware  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Menu_FastFlagEditor_Warning_Text {
             get {
@@ -4319,6 +4337,24 @@ namespace Bloxstrap.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enable this to display a custom BubbleStrap Discord RPC on your profile while the app is open..
+        /// </summary>
+        public static string Menu_Integrations_ShowBubblestrapRPC_Description {
+            get {
+                return ResourceManager.GetString("Menu.Integrations.ShowBubblestrapRPC.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BubbleStrap RPC.
+        /// </summary>
+        public static string Menu_Integrations_ShowBubblestrapRPC_Title {
+            get {
+                return ResourceManager.GetString("Menu.Integrations.ShowBubblestrapRPC.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The Roblox game you&apos;re playing will be shown on your Discord profile. [Not working?]({0}).
         /// </summary>
         public static string Menu_Integrations_ShowGameActivity_Description {
@@ -4387,6 +4423,42 @@ namespace Bloxstrap.Resources {
         public static string Menu_Mods_Misc_CompatibilitySettings_Title {
             get {
                 return ResourceManager.GetString("Menu.Mods.Misc.CompatibilitySettings.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose sound....
+        /// </summary>
+        public static string Menu_Mods_Misc_CustomDeathSound_Choose {
+            get {
+                return ResourceManager.GetString("Menu.Mods.Misc.CustomDeathSound.Choose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change the death sound to any audio you choose..
+        /// </summary>
+        public static string Menu_Mods_Misc_CustomDeathSound_Description {
+            get {
+                return ResourceManager.GetString("Menu.Mods.Misc.CustomDeathSound.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove Custom Death Sound.
+        /// </summary>
+        public static string Menu_Mods_Misc_CustomDeathSound_Remove {
+            get {
+                return ResourceManager.GetString("Menu.Mods.Misc.CustomDeathSound.Remove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Custom Death Sound.
+        /// </summary>
+        public static string Menu_Mods_Misc_CustomDeathSound_Title {
+            get {
+                return ResourceManager.GetString("Menu.Mods.Misc.CustomDeathSound.Title", resourceCulture);
             }
         }
         

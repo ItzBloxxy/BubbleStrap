@@ -11,6 +11,7 @@ namespace Bloxstrap.UI.Elements.Settings.Pages
         {
             DataContext = new ModsViewModel();
             InitializeComponent();
+            App.BubbleRPC?.SetPage("Mods Settings");
         }
     }
 }

@@ -61,6 +61,10 @@ namespace Bloxstrap.UI.ViewModels.Settings
 
         public ICommand ManageCustomFontCommand => new RelayCommand(ManageCustomFont);
 
+        public ICommand AddCustomDeathSoundCommand => new RelayCommand(AddCustomDeathSound);
+
+        public ICommand RemoveCustomDeathSoundCommand => new RelayCommand(RemoveCustomDeathSound);
+
         public ICommand OpenCompatSettingsCommand => new RelayCommand(OpenCompatSettings);
 
         public ModPresetTask OldAvatarBackgroundTask { get; } = new("OldAvatarBackground", @"ExtraContent\places\Mobile.rbxl", "OldAvatarBackground.rbxl");
@@ -96,7 +100,81 @@ namespace Bloxstrap.UI.ViewModels.Settings
             }
         });
 
+        private Visibility GetVisibility(string directory, string[] filenames, bool checkExist)
+        {
+            bool anyExist = filenames.Any(name => File.Exists(Path.Combine(directory, name)));
+            return (checkExist ? anyExist : !anyExist) ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        public Visibility ChooseCustomDeathSoundVisibility =>
+            GetVisibility(Path.Combine(Paths.Modifications, "Content", "sounds"),
+                  new[] { "oof.ogg" }, checkExist: false);
+
+        public Visibility DeleteCustomDeathSoundVisibility =>
+            GetVisibility(Path.Combine(Paths.Modifications, "Content", "sounds"),
+                          new[] { "oof.ogg" }, checkExist: true);
+
         public FontModPresetTask TextFontTask { get; } = new();
+
+        private void AddCustomFile(string[] targetFiles, string targetDir, string dialogTitle, string filter, string failureText, Action postAction = null!)
+        {
+            var dialog = new OpenFileDialog
+            {
+                Filter = filter,
+                Title = dialogTitle
+            };
+
+            if (dialog.ShowDialog() != true)
+                return;
+
+            string sourcePath = dialog.FileName;
+            Directory.CreateDirectory(targetDir);
+
+            try
+            {
+                foreach (var name in targetFiles)
+                {
+                    string destPath = Path.Combine(targetDir, name);
+                    File.Copy(sourcePath, destPath, overwrite: true);
+                }
+            }
+            catch (Exception ex)
+            {
+                Frontend.ShowMessageBox($"Failed to add {failureText}:\n{ex.Message}", MessageBoxImage.Error);
+                return;
+            }
+
+            postAction?.Invoke();
+        }
+
+        private void RemoveCustomFile(string[] targetFiles, string targetDir, string notFoundMessage, Action postAction = null!)
+        {
+            bool anyDeleted = false;
+
+            foreach (var name in targetFiles)
+            {
+                string filePath = Path.Combine(targetDir, name);
+                if (File.Exists(filePath))
+                {
+                    try
+                    {
+                        File.Delete(filePath);
+                        anyDeleted = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        Frontend.ShowMessageBox($"Failed to remove {name}:\n{ex.Message}", MessageBoxImage.Error);
+                    }
+                }
+            }
+
+            if (!anyDeleted)
+            {
+                Frontend.ShowMessageBox(notFoundMessage, MessageBoxImage.Information);
+            }
+
+            postAction?.Invoke();
+        }
 
         private void OpenCompatSettings()
         {
@@ -107,6 +185,34 @@ namespace Bloxstrap.UI.ViewModels.Settings
             else
                 Frontend.ShowMessageBox(Strings.Common_RobloxNotInstalled, MessageBoxImage.Error);
 
+        }
+
+        public void AddCustomDeathSound()
+        {
+            AddCustomFile(
+                new[] { "oof.ogg" },
+                Path.Combine(Paths.Modifications, "Content", "sounds"),
+                "Select a Custom Death Sound",
+                "OGG Audio (*.ogg)|*.ogg",
+                "death sound",
+                () =>
+                {
+                    OnPropertyChanged(nameof(ChooseCustomDeathSoundVisibility));
+                    OnPropertyChanged(nameof(DeleteCustomDeathSoundVisibility));
+                });
+        }
+
+        public void RemoveCustomDeathSound()
+        {
+            RemoveCustomFile(
+                new[] { "oof.ogg" },
+                Path.Combine(Paths.Modifications, "Content", "sounds"),
+                "No custom death sound found to remove.",
+                () =>
+                {
+                    OnPropertyChanged(nameof(ChooseCustomDeathSoundVisibility));
+                    OnPropertyChanged(nameof(DeleteCustomDeathSoundVisibility));
+                });
         }
     }
 }

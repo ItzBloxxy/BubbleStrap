@@ -47,10 +47,44 @@
             set => App.Settings.Prop.ConfirmLaunches = value;
         }
 
+        public bool HideBootstrapperInfo
+        {
+            get => App.Settings.Prop.HideBootstrapperInfo;
+            set => App.Settings.Prop.HideBootstrapperInfo = value;
+        }
+
+        public bool CloseCrashHandler
+        {
+            get => App.Settings.Prop.AutoCloseCrashHandler;
+            set => App.Settings.Prop.AutoCloseCrashHandler = value;
+        }
+
         public bool BackgroundUpdates
         {
             get => App.Settings.Prop.BackgroundUpdatesEnabled;
             set => App.Settings.Prop.BackgroundUpdatesEnabled = value;
+        }
+
+        public bool EnableMemoryTrimmer
+        {
+            get => App.Settings.Prop.EnableMemoryTrimmer;
+            set
+            {
+                App.Settings.Prop.EnableMemoryTrimmer = value;
+                OnPropertyChanged(nameof(EnableMemoryTrimmer));
+            }
+        }
+        public string MemoryTrimInterval
+        {
+            get => App.Settings.Prop.MemoryTrimInterval.ToString();
+            set
+            {
+                if (int.TryParse(value, out int result))
+                {
+                    App.Settings.Prop.MemoryTrimInterval = result;
+                }
+                OnPropertyChanged(nameof(MemoryTrimInterval));
+            }
         }
 
         public CleanerOptions SelectedCleanUpMode

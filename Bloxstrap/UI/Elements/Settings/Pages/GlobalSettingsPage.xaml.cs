@@ -14,6 +14,7 @@ namespace Bloxstrap.UI.Elements.Settings.Pages
         {
             SetupViewModel();
             InitializeComponent();
+            App.BubbleRPC?.SetPage("Global Settings");
         }
 
         private void SetupViewModel()

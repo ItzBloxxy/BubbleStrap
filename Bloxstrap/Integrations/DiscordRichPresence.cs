@@ -1,11 +1,11 @@
-using System.Windows;
+﻿using System.Windows;
 using DiscordRPC;
 
 namespace Bloxstrap.Integrations
 {
-    public class BubblestrapRichPresence : IDisposable
+    public class DiscordRichPresence : IDisposable
     {
-        private readonly DiscordRpcClient _rpcClient = new("1451191251956273235");
+        private readonly DiscordRpcClient _rpcClient = new("1005469189907173486");
         private readonly ActivityWatcher _activityWatcher;
         private readonly Queue<Message> _messageQueue = new();
 
@@ -20,14 +20,14 @@ namespace Bloxstrap.Integrations
 
         private bool _visible = true;
 
-        public BubblestrapRichPresence(ActivityWatcher activityWatcher)
+        public DiscordRichPresence(ActivityWatcher activityWatcher)
         {
-            const string LOG_IDENT = "BubblestrapRichPresence";
+            const string LOG_IDENT = "DiscordRichPresence";
 
             _activityWatcher = activityWatcher;
 
-            _activityWatcher.OnGameJoin += (_, _) => Task.Run(() => SetCurrentGame());
-            _activityWatcher.OnGameLeave += (_, _) => Task.Run(() => SetCurrentGame());
+            _activityWatcher.OnGameJoin += async (_, _) => await SetCurrentGame();
+            _activityWatcher.OnGameLeave += async (_, _) => await SetCurrentGame();
             _activityWatcher.OnRPCMessage += (_, message) => ProcessRPCMessage(message);
 
             _rpcClient.OnReady += (_, e) =>
@@ -42,6 +42,10 @@ namespace Bloxstrap.Integrations
             _rpcClient.OnConnectionEstablished += (_, e) =>
                 App.Logger.WriteLine(LOG_IDENT, "Established connection with Discord RPC");
 
+            //spams log as it tries to connect every ~15 sec when discord is closed so not now
+            //_rpcClient.OnConnectionFailed += (_, e) =>
+            //    App.Logger.WriteLine(LOG_IDENT, "Failed to establish connection with Discord RPC");
+
             _rpcClient.OnClose += (_, e) =>
                 App.Logger.WriteLine(LOG_IDENT, $"Lost connection to Discord RPC - {e.Reason} ({e.Code})");
 
@@ -50,25 +54,29 @@ namespace Bloxstrap.Integrations
 
         public void ProcessRPCMessage(Message message, bool implicitUpdate = true)
         {
-            const string LOG_IDENT = "BubblestrapRichPresence::ProcessRPCMessage";
+            const string LOG_IDENT = "DiscordRichPresence::ProcessRPCMessage";
 
             if (message.Command != "SetRichPresence" && message.Command != "SetLaunchData")
                 return;
 
             if (_currentPresence is null || _originalPresence is null)
             {
-                App.Logger.WriteLine(LOG_IDENT, "Presence is not set, enqueuing message");
+                App.Logger.WriteLine(LOG_IDENT, "Presence not set, enqueuing");
                 _messageQueue.Enqueue(message);
                 return;
             }
 
-            if (message.Command == "SetLaunchData")
+            switch (message.Command)
             {
-                _currentPresence.Buttons = GetButtons();
-            }
-            else if (message.Command == "SetRichPresence")
-            {
-                ProcessSetRichPresence(message, implicitUpdate);
+                case "SetLaunchData":
+                    _currentPresence.Buttons = GetButtons();
+                    break;
+
+                case "SetRichPresence":
+                    ProcessSetRichPresence(message, implicitUpdate);
+                    if (_smallImgBeingFetched != null || _largeImgBeingFetched != null)
+                        return;
+                    break;
             }
 
             if (implicitUpdate)
@@ -157,7 +165,7 @@ namespace Bloxstrap.Integrations
 
         private void ProcessSetRichPresence(Message message, bool implicitUpdate)
         {
-            const string LOG_IDENT = "BubblestrapRichPresence::ProcessSetRichPresence";
+            const string LOG_IDENT = "DiscordRichPresence::ProcessSetRichPresence";
             Models.BloxstrapRPC.RichPresence? presenceData;
 
             Debug.Assert(_currentPresence is not null);
@@ -166,6 +174,7 @@ namespace Bloxstrap.Integrations
             if (_fetchThumbnailsToken != null)
             {
                 _fetchThumbnailsToken.Cancel();
+                _fetchThumbnailsToken.Dispose();
                 _fetchThumbnailsToken = null;
             }
 
@@ -302,7 +311,7 @@ namespace Bloxstrap.Integrations
 
         public void SetVisibility(bool visible)
         {
-            App.Logger.WriteLine("BubblestrapRichPresence::SetVisibility", $"Setting presence visibility ({visible})");
+            App.Logger.WriteLine("DiscordRichPresence::SetVisibility", $"Setting presence visibility ({visible})");
 
             _visible = visible;
 
@@ -314,7 +323,7 @@ namespace Bloxstrap.Integrations
 
         public async Task<bool> SetCurrentGame()
         {
-            const string LOG_IDENT = "BubblestrapRichPresence::SetCurrentGame";
+            const string LOG_IDENT = "DiscordRichPresence::SetCurrentGame";
 
             if (!_activityWatcher.InGame)
             {
@@ -380,7 +389,7 @@ namespace Bloxstrap.Integrations
             {
                 ServerType.Private => "In a private server",
                 ServerType.Reserved => "In a reserved server",
-                _ => $"by {universeDetails.Data.Creator.Name}" + (universeDetails.Data.Creator.HasVerifiedBadge ? " ??" : ""),
+                _ => $"by {universeDetails.Data.Creator.Name}" + (universeDetails.Data.Creator.HasVerifiedBadge ? " ☑️" : ""),
             };
 
             string universeName = universeDetails.Data.Name;
@@ -391,14 +400,9 @@ namespace Bloxstrap.Integrations
             _currentPresence = new DiscordRPC.RichPresence
             {
                 Details = universeName,
-
-                StatusDisplay = StatusDisplayType.Details,
-
+                StatusDisplay = App.Settings.Prop.EnableCustomStatusDisplay ? StatusDisplayType.Details : (StatusDisplayType)0,
                 State = status,
-                Timestamps = new Timestamps
-                {
-                    Start = timeStarted.ToUniversalTime()
-                },
+                Timestamps = new Timestamps { Start = timeStarted.ToUniversalTime() },
                 Buttons = GetButtons(),
                 Assets = new Assets
                 {
@@ -409,7 +413,7 @@ namespace Bloxstrap.Integrations
                 }
             };
 
-
+            // this is used for configuration from BloxstrapRPC
             _originalPresence = _currentPresence.Clone();
 
             if (_messageQueue.Any())
@@ -459,7 +463,7 @@ namespace Bloxstrap.Integrations
 
         public void UpdatePresence()
         {
-            const string LOG_IDENT = "BubblestrapRichPresence::UpdatePresence";
+            const string LOG_IDENT = "DiscordRichPresence::UpdatePresence";
 
             if (_currentPresence is null)
             {
@@ -476,7 +480,7 @@ namespace Bloxstrap.Integrations
 
         public void Dispose()
         {
-            App.Logger.WriteLine("BubblestrapRichPresence::Dispose", "Cleaning up Discord RPC and Presence");
+            App.Logger.WriteLine("DiscordRichPresence::Dispose", "Cleaning up Discord RPC and Presence");
             _rpcClient.ClearPresence();
             _rpcClient.Dispose();
             GC.SuppressFinalize(this);

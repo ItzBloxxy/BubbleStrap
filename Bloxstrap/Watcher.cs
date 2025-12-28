@@ -13,7 +13,7 @@ namespace Bloxstrap
 
         public readonly ActivityWatcher? ActivityWatcher;
 
-        public readonly BubblestrapRichPresence? RichPresence;
+        public DiscordRichPresence? RichPresence { get; private set; }
 
         public Watcher()
         {
@@ -64,7 +64,7 @@ namespace Bloxstrap
                 if (App.Settings.Prop.UseDiscordRichPresence && !App.State.Prop.WatcherRunning)
                 {
                     App.Logger.WriteLine(LOG_IDENT, "Running RPC");
-                    RichPresence = new BubblestrapRichPresence(ActivityWatcher);
+                    RichPresence = new DiscordRichPresence(ActivityWatcher);
                 }
             }
 

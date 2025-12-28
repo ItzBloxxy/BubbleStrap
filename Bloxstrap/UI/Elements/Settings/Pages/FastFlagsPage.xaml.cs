@@ -10,15 +10,15 @@ namespace Bloxstrap.UI.Elements.Settings.Pages
     /// </summary>
     public partial class FastFlagsPage
     {
-        private bool _initialLoad = false;
-
-        private FastFlagsViewModel _viewModel = null!;
-
         public FastFlagsPage()
         {
             SetupViewModel();
             InitializeComponent();
+            App.BubbleRPC?.SetPage("FastFlags Settings");
         }
+
+        private bool _initialLoad = false;
+        private FastFlagsViewModel _viewModel = null!;
 
         private void SetupViewModel()
         {

@@ -12,6 +12,7 @@ namespace Bloxstrap.UI.Elements.Settings.Pages
         {
             DataContext = new IntegrationsViewModel();
             InitializeComponent();
+            App.BubbleRPC?.SetPage("Integrations");
         }
 
         public void CustomIntegrationSelection(object sender, SelectionChangedEventArgs e)

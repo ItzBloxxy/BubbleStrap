@@ -23,7 +23,11 @@ namespace Bloxstrap.UI.ViewModels.Installer
 
         private void LaunchSettings() => CloseWindowRequest?.Invoke(this, NextAction.LaunchSettings);
 
-        private void LaunchRoblox() => CloseWindowRequest?.Invoke(this, NextAction.LaunchRoblox);
+        private void LaunchRoblox()
+        {
+            CloseWindowRequest?.Invoke(this, NextAction.LaunchRoblox);
+            App.BubbleRPC?.Dispose();
+        }
 
         private void LaunchRobloxStudio() => CloseWindowRequest?.Invoke(this, NextAction.LaunchRobloxStudio);
 

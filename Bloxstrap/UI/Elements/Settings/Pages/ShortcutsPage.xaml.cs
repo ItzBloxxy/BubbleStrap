@@ -11,6 +11,7 @@ namespace Bloxstrap.UI.Elements.Settings.Pages
         {
             DataContext = new ShortcutsViewModel();
             InitializeComponent();
+            App.BubbleRPC?.SetPage("Shortcuts");
         }
     }
 }

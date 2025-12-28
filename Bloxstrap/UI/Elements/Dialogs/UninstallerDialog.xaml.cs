@@ -24,6 +24,7 @@ namespace Bloxstrap.UI.Elements.Dialogs
             DataContext = viewModel;
 
             InitializeComponent();
+            App.BubbleRPC?.SetDialog("Uninstaller");
         }
     }
 }

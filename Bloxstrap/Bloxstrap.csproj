@@ -1,30 +1,41 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+	
+	<Target Name="StripWinSDK" AfterTargets="ComputeResolvedFilesToPublishList">
+		<ItemGroup>
+			<ResolvedFileToPublish Remove="@(ResolvedFileToPublish)"
+								   Condition="'%(Filename)' == 'Microsoft.Windows.SDK.NET'" />
+		</ItemGroup>
+	</Target>
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net9.0-windows10.0.17763.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <UseWPF>true</UseWPF>
-    <UseWindowsForms>False</UseWindowsForms>
-    <ApplicationIcon>Bloxstrap.ico</ApplicationIcon>
-    <Version>1.0.1.0</Version>
-    <FileVersion>1.0.1.0</FileVersion>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
-    <AssemblyName>BubbleStrap</AssemblyName>
-    <Product>$(AssemblyName)</Product>
-    <RootNamespace>Bloxstrap</RootNamespace>
-    <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
-    <CsWin32EmitAsInternal>false</CsWin32EmitAsInternal>
-  </PropertyGroup>
+<PropertyGroup>
+	<OutputType>WinExe</OutputType>
+	<TargetFramework>net9.0-windows10.0.17763.0</TargetFramework>
+	<Nullable>enable</Nullable>
+	<UseWPF>true</UseWPF>
+	<UseWindowsForms>False</UseWindowsForms>
+	<ApplicationIcon>Resources\IconBubblestrap.ico</ApplicationIcon>
+	<Version>1.0.1.0</Version>
+	<FileVersion>1.0.1.0</FileVersion>
+	<ApplicationManifest>app.manifest</ApplicationManifest>
+	<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	<IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+	<AssemblyName>BubbleStrap</AssemblyName>
+	<Product>$(AssemblyName)</Product>
+	<RootNamespace>Bloxstrap</RootNamespace>
+	<SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
+	<CsWin32EmitAsInternal>false</CsWin32EmitAsInternal>
 
+	<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+	<PublishSingleFile>true</PublishSingleFile>
+	<SelfContained>false</SelfContained>
+	<IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+</PropertyGroup>
   <ItemGroup>
     <None Remove="Resources\LightEditor.xshd" />
   </ItemGroup>
     
   <ItemGroup>
-    <Resource Include="Bloxstrap.ico" />
+    <Resource Include="Bubblestrap.ico" />
     <Resource Include="Resources\LightEditor.xshd" />
     <Resource Include="Resources\Fonts\NotoSansThai-VariableFont_wdth,wght.ttf" />
     <Resource Include="Resources\Fonts\Rubik-VariableFont_wght.ttf" />
@@ -108,6 +119,15 @@
   </Target>
 
   <ItemGroup>
+    <Content Include="Resources\IconBubblestrap.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Update="Properties\Settings.Designer.cs">
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>
@@ -121,6 +141,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resources\Strings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>

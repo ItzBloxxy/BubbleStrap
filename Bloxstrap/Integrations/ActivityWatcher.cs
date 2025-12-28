@@ -1,7 +1,11 @@
-﻿namespace Bloxstrap.Integrations
+﻿using System.Runtime.InteropServices;
+
+namespace Bloxstrap.Integrations
 {
     public class ActivityWatcher : IDisposable
     {
+        [DllImport("psapi.dll")]
+        static extern bool EmptyWorkingSet(IntPtr hProcess);
 
         private const string GameMessageEntry = "[FLog::Output] [BloxstrapRPC]";
         private const string GameJoiningEntry = "[FLog::Output] ! Joining game";
@@ -119,6 +123,7 @@
             var logFileStream = logFileInfo.Open(FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
 
             App.Logger.WriteLine(LOG_IDENT, $"Opened {LogLocation}");
+            _ = RunMemoryTrimmer();
 
             using var streamReader = new StreamReader(logFileStream);
 
@@ -403,6 +408,33 @@
 
                     ShowNotif?.Invoke(this, null!);
                 }
+            }
+        }
+
+        private async Task RunMemoryTrimmer()
+        {
+            const string LOG_IDENT = "ActivityWatcher::MemoryTrimmer";
+
+            while (!IsDisposed)
+            {
+                if (App.Settings.Prop.EnableMemoryTrimmer)
+                {
+                    var processes = Process.GetProcessesByName("RobloxPlayerBeta");
+                    foreach (var process in processes)
+                    {
+                        try
+                        {
+                            EmptyWorkingSet(process.Handle);
+                        }
+                        catch (Exception ex)
+                        {
+                            App.Logger.WriteLine(LOG_IDENT, $"Trim failed: {ex.Message}");
+                        }
+                    }
+                }
+
+                int interval = Math.Max(App.Settings.Prop.MemoryTrimInterval, 1);
+                await Task.Delay(interval * 1000);
             }
         }
 

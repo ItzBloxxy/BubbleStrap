@@ -41,7 +41,12 @@ namespace Bloxstrap.UI.ViewModels.Settings
             }
         }
 
-        private void OpenAbout() => new MainWindow().ShowDialog();
+        private void OpenAbout()
+        {
+            App.BubbleRPC?.SetDialog("About");
+            new MainWindow().ShowDialog();
+            App.BubbleRPC?.ClearDialog();
+        }
 
         private void CloseWindow() => RequestCloseWindowEvent?.Invoke(this, EventArgs.Empty);
 

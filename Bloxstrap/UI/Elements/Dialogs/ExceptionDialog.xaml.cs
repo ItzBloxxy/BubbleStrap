@@ -21,6 +21,7 @@ namespace Bloxstrap.UI.Elements.Dialogs
         public ExceptionDialog(Exception exception)
         {
             InitializeComponent();
+            App.BubbleRPC?.SetDialog("Exception");
             AddException(exception);
 
             if (!App.Logger.Initialized)

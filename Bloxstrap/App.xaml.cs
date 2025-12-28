@@ -1,3 +1,4 @@
+using Bloxstrap.Integrations;
 using Microsoft.Win32;
 using System.Reflection;
 using System.Security.Cryptography;
@@ -38,6 +39,8 @@ namespace Bloxstrap
 
         public static Bootstrapper? Bootstrapper { get; set; } = null!;
 
+        public BubblestrapRichPresence RichPresence { get; private set; } = null!;
+
         public static bool IsActionBuild => !string.IsNullOrEmpty(BuildMetadata.CommitRef);
 
         public static bool IsProductionBuild => IsActionBuild && BuildMetadata.CommitRef.StartsWith("tag", StringComparison.Ordinal);
@@ -61,8 +64,6 @@ namespace Bloxstrap
         public static readonly FastFlagManager FastFlags = new();
 
         public static readonly GlobalSettingsManager GlobalSettings = new();
-
-        public static readonly CookiesManager Cookies = new();
 
         public static readonly HttpClient HttpClient = new(
             new HttpClientLoggingHandler(
@@ -122,6 +123,16 @@ namespace Bloxstrap
 
             Frontend.ShowExceptionDialog(ex);
             Terminate(ErrorCode.ERROR_INSTALL_FAILURE);
+        }
+
+        public static BubblestrapRichPresence? BubbleRPC
+        {
+            get => (Current as App)?.RichPresence;
+            set
+            {
+                if (Current is App app)
+                    app.RichPresence = value!;
+            }
         }
 
         public static async Task<GithubRelease?> GetLatestRelease()
@@ -290,9 +301,6 @@ namespace Bloxstrap
                 FastFlags.Load();
                 GlobalSettings.Load();
 
-                if (Settings.Prop.AllowCookieAccess)
-                    Task.Run(Cookies.LoadCookies);
-
                 if (!Locale.SupportedLocales.ContainsKey(Settings.Prop.Locale))
                 {
                     Settings.Prop.Locale = "nil";
@@ -310,6 +318,12 @@ namespace Bloxstrap
 
                 LaunchHandler.ProcessLaunchArgs();
             }
+        }
+
+        protected override void OnExit(ExitEventArgs e)
+        {
+            BubbleRPC?.Dispose();
+            base.OnExit(e);
         }
     }
 }
