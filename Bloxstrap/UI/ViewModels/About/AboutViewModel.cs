@@ -4,7 +4,7 @@ namespace Bloxstrap.UI.ViewModels.About
 {
     public class AboutViewModel : NotifyPropertyChangedViewModel
     {
-        public string Version => string.Format(Strings.Menu_About_Version, App.Version);
+        public string Version => string.Format(Strings.Menu_About_Version, string.Join(".", App.Version.Split('.').Take(3)));
 
         public BuildMetadataAttribute BuildMetadata => App.BuildMetadata;
 

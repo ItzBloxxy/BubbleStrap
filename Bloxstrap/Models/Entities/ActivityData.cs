@@ -93,7 +93,7 @@ namespace Bloxstrap.Models.Entities
             // we need useRobloxUri for rejoin feature
             string deeplink = $"{(useRobloxUri ? "roblox://experiences/start" : App.RemoteData.Prop.DeeplinkUrl)}?placeId={PlaceId}";
 
-            if (ServerType == ServerType.Private) // thats not going to work
+            if (ServerType == ServerType.Private) // that is not going to work
                 deeplink += "&accessCode=" + AccessCode;
             else
                 deeplink += "&gameInstanceId=" + JobId;
@@ -104,7 +104,7 @@ namespace Bloxstrap.Models.Entities
             return deeplink;
         }
 
-        // we use rovalra's apis in BubbleStrap.app/joingame
+        // we use rovalra's apis in fishstrap.app/joingame
         public void ProcessServerRoValra()
         {
             if (string.IsNullOrEmpty(JobId))

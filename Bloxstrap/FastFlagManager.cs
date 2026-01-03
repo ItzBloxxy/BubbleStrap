@@ -35,11 +35,7 @@ namespace Bloxstrap
             { "Geometry.MeshLOD.L0", "DFIntCSGLevelOfDetailSwitchingDistance" },
             { "Geometry.MeshLOD.L12", "DFIntCSGLevelOfDetailSwitchingDistanceL12" },
             { "Geometry.MeshLOD.L23", "DFIntCSGLevelOfDetailSwitchingDistanceL23" },
-            { "Geometry.MeshLOD.L34", "DFIntCSGLevelOfDetailSwitchingDistanceL34" },
-
-            // Texture quality
-            { "Rendering.TextureQuality.OverrideEnabled", "DFFlagTextureQualityOverrideEnabled" },
-            { "Rendering.TextureQuality.Level", "DFIntTextureQualityOverride" },
+            { "Geometry.MeshLOD.L34", "DFIntCSGLevelOfDetailSwitchingDistanceL34" }
         };
 
         public static IReadOnlyDictionary<RenderingMode, string> RenderingModes => new Dictionary<RenderingMode, string>
@@ -56,15 +52,6 @@ namespace Bloxstrap
             { MSAAMode.x1, "1" },
             { MSAAMode.x2, "2" },
             { MSAAMode.x4, "4" }
-        };
-
-        public static IReadOnlyDictionary<TextureQuality, string?> TextureQualityLevels => new Dictionary<TextureQuality, string?>
-        {
-            { TextureQuality.Default, null },
-            { TextureQuality.Level0, "0" },
-            { TextureQuality.Level1, "1" },
-            { TextureQuality.Level2, "2" },
-            { TextureQuality.Level3, "3" },
         };
 
         // all fflags are stored as strings

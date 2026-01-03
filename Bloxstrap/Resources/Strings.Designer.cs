@@ -2207,42 +2207,6 @@ namespace Bloxstrap.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Level 0 (Lowest).
-        /// </summary>
-        public static string Enums_FlagPresets_TextureQuality_Level0 {
-            get {
-                return ResourceManager.GetString("Enums.FlagPresets.TextureQuality.Level0", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Level 1.
-        /// </summary>
-        public static string Enums_FlagPresets_TextureQuality_Level1 {
-            get {
-                return ResourceManager.GetString("Enums.FlagPresets.TextureQuality.Level1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Level 2.
-        /// </summary>
-        public static string Enums_FlagPresets_TextureQuality_Level2 {
-            get {
-                return ResourceManager.GetString("Enums.FlagPresets.TextureQuality.Level2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Level 3 (Highest).
-        /// </summary>
-        public static string Enums_FlagPresets_TextureQuality_Level3 {
-            get {
-                return ResourceManager.GetString("Enums.FlagPresets.TextureQuality.Level3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Private server.
         /// </summary>
         public static string Enums_ServerType_Private {
@@ -3034,7 +2998,7 @@ namespace Bloxstrap.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Automatically closes the RobloxCrashHandler.exe process on startup to reduce memory usage..
+        ///   Looks up a localized string similar to Automatically closes RobloxCrashHandler.exe at launch to reduce memory usage.
         /// </summary>
         public static string Menu_Behaviour_CloseCrashHandler_Description {
             get {
@@ -3043,7 +3007,7 @@ namespace Bloxstrap.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Close Roblox Crash Handler.
+        ///   Looks up a localized string similar to Disable Roblox Crash Handler.
         /// </summary>
         public static string Menu_Behaviour_CloseCrashHandler_Title {
             get {
@@ -3147,6 +3111,24 @@ namespace Bloxstrap.Resources {
         public static string Menu_Bloxstrap_Description {
             get {
                 return ResourceManager.GetString("Menu.Bloxstrap.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Provide access to Roblox APIs using your authentication cookie. [What will Bubblestrap access?]({0}).
+        /// </summary>
+        public static string Menu_Bootstrapper_AllowCookieAccess_Description {
+            get {
+                return ResourceManager.GetString("Menu.Bootstrapper.AllowCookieAccess.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Allow Bubblestrap to access your Roblox account.
+        /// </summary>
+        public static string Menu_Bootstrapper_AllowCookieAccess_Title {
+            get {
+                return ResourceManager.GetString("Menu.Bootstrapper.AllowCookieAccess.Title", resourceCulture);
             }
         }
         
@@ -3872,15 +3854,6 @@ namespace Bloxstrap.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Texture quality.
-        /// </summary>
-        public static string Menu_FastFlags_Presets_TextureQuality_Title {
-            get {
-                return ResourceManager.GetString("Menu.FastFlags.Presets.TextureQuality.Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Reset everything to defaults.
         /// </summary>
         public static string Menu_FastFlags_Reset_Title {
@@ -4436,7 +4409,7 @@ namespace Bloxstrap.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Change the death sound to any audio you choose..
+        ///   Looks up a localized string similar to Change the death sound to any audio of your choice   ..
         /// </summary>
         public static string Menu_Mods_Misc_CustomDeathSound_Description {
             get {

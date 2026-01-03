@@ -484,10 +484,10 @@ Would you like to upgrade your currently installed version?</value>
 	<value>Hide version and production details</value>
   </data>
   <data name="Menu.Behaviour.CloseCrashHandler.Description" xml:space="preserve">
-	<value>Automatically closes the RobloxCrashHandler.exe process on startup to reduce memory usage.</value>
+	<value>Automatically closes RobloxCrashHandler.exe at launch to reduce memory usage</value>
   </data>
   <data name="Menu.Behaviour.CloseCrashHandler.Title" xml:space="preserve">
-    <value>Close Roblox Crash Handler</value>
+    <value>Disable Roblox Crash Handler</value>
   </data>
   <data name="Menu.Appearance.Description" xml:space="preserve">
     <value>Configure how Bubblestrap should look.</value>
@@ -750,7 +750,7 @@ Selecting 'No' will ignore this warning and continue installation.</value>
     <value>Custom Death Sound</value>
   </data>
   <data name="Menu.Mods.Misc.CustomDeathSound.Description" xml:space="preserve">
-    <value>Change the death sound to any audio you choose.</value>
+    <value>Change the death sound to any audio of your choice   .</value>
   </data>
   <data name="Menu.Mods.Description" xml:space="preserve">
     <value>Manage and apply file mods to the Roblox game client.</value>
@@ -855,21 +855,6 @@ Some text might not be translated to preferred language.</value>
   </data>
   <data name="Menu.FastFlags.Presets.FullscreenTitlebar.Description" xml:space="preserve">
     <value>Stops it from showing whenever you move your mouse to the top of the screen.</value>
-  </data>
-  <data name="Menu.FastFlags.Presets.TextureQuality.Title" xml:space="preserve">
-    <value>Texture quality</value>
-  </data>
-  <data name="Enums.FlagPresets.TextureQuality.Level0" xml:space="preserve">
-    <value>Level 0 (Lowest)</value>
-  </data>
-  <data name="Enums.FlagPresets.TextureQuality.Level1" xml:space="preserve">
-    <value>Level 1</value>
-  </data>
-  <data name="Enums.FlagPresets.TextureQuality.Level2" xml:space="preserve">
-    <value>Level 2</value>
-  </data>
-  <data name="Enums.FlagPresets.TextureQuality.Level3" xml:space="preserve">
-    <value>Level 3 (Highest)</value>
   </data>
   <data name="Dialog.Connectivity.UnableToDownload" xml:space="preserve">
     <value>Bubblestrap is unable to download Roblox</value>
@@ -1803,5 +1788,11 @@ Defaulting to {1}.</value>
   </data>
   <data name="Menu.FastFlags.FRMQualityOverride.Description" xml:space="preserve">
     <value>Choose the FRM quality that Roblox should use.</value>
+  </data>
+  <data name="Menu.Bootstrapper.AllowCookieAccess.Title" xml:space="preserve">
+    <value>Allow Bubblestrap to access your Roblox account</value>
+  </data>
+  <data name="Menu.Bootstrapper.AllowCookieAccess.Description" xml:space="preserve">
+    <value>Provide access to Roblox APIs using your authentication cookie. [What will Bubblestrap access?]({0})</value>
   </data>
 </root>
