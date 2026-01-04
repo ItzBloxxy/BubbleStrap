@@ -37,7 +37,7 @@ Download the latest release [here][repo-latest]! 🔥
 - Background updates - Update roblox in the background instead of waiting.
 - Cache, logs and Bubblestrap logs cleaner
 
-## Deployment
+### Deployment
 - Channel changer
 - Force Roblox reinstallation - Roblox will be installed fresh on the next launch
 
