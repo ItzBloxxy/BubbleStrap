@@ -37,6 +37,10 @@ Download the latest release [here][repo-latest]! 🔥
 - Background updates - Update roblox in the background instead of waiting.
 - Cache, logs and Bubblestrap logs cleaner
 
+## Deployment
+- Channel changer
+- Force Roblox reinstallation - Roblox will be installed fresh on the next launch
+
 ### Mods
 - Use custom font
 - Use custom death sound
@@ -44,12 +48,11 @@ Download the latest release [here][repo-latest]! 🔥
 - Use old avatar editor bcakground
 
 ### Other
-- Channel changer
 - FFlag editor
 - Global Settings page
+- Framerate cap unlocking
 - Custom BubbleStrap game invite links
 - Roblox Studio Support
-- Framerate cap unlocking
   
 [repo-latest]:   https://github.com/ItzBloxxy/BubbleStrap/releases/latest
 
