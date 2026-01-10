@@ -46,7 +46,7 @@ Found any bugs or issues?
 - Use custom font
 - Use custom death sound
 - Old character sounds from 2014
-- Use old avatar editor bcakground
+- Use old avatar editor background
 
 ### Other
 - FFlag editor
