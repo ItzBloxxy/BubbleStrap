@@ -13,8 +13,6 @@ Bubblestrap is a fast and lightweight bootstrapper for Roblox that aims to provi
 - **Bubblestrap only supports Windows 10 and above. (Best experience on Windows 11)**
 - **We do not have any plans to port it to any other operating systems.**
 
-## Requires [NET 9.0 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-9.0.308-windows-x64-installer)
-
 Download the latest release [here][repo-latest]! 🔥
 
 Found any bugs or issues?
